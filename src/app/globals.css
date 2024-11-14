@@ -19,3 +19,106 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.basic-card-detail-header {
+  @apply flex justify-between items-center
+}
+
+.basic-card-detail-body p::before {
+  content: "Description:";
+  display: block;
+  @apply text-xs text-gray-700
+}
+
+.basic-card-detail-body {
+  @apply mt-5 flex justify-between items-center
+}
+
+.basic-card-detail-body span {
+  @apply mr-2
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.status, .priority {
+  @apply w-fit px-3 py-1 rounded text-sm
+}
+
+.high {
+  @apply  text-red-900 font-semibold
+}
+
+.medium {
+  @apply  text-blue-900 font-semibold
+}
+
+.low {
+  @apply  text-gray-900 font-semibold
+}
+
+.pending {
+  @apply bg-red-300;
+}
+
+.in-progress {
+  @apply bg-blue-400;
+}
+
+.completed {
+  @apply bg-green-400;
+}
+
+.btn-small {
+  @apply w-fit text-sm px-3 py-1
+}
+
+.detail-page .detail-body {
+  @apply flex gap-5 flex-col
+}
+
+.detail-page .detail-deskripsi::before, 
+.detail-page .detail-status::before, 
+.detail-page .detail-priority::before, 
+.detail-page .detail-duedate::before {
+  content: "description:";
+  display: block;
+  @apply text-xs text-gray-700
+}
+
+.detail-page .detail-status::before {
+  content: "status:"
+}
+
+.detail-page .detail-priority::before {
+  content: "priority:"
+}
+
+.detail-page .detail-duedate::before {
+  content: "due date:"
+}
+
+.detail-page .detail-deskripsi {
+  @apply mt-5
+}
+
+.detail-page .detail-status {
+  @apply mt-2
+}
+
+.detail-page .detail-body .detail-status {
+  @apply mt-0
+}
+
+.child {
+  @apply mt-5
+}
+
+.child .text-4xl {
+  @apply text-base
+}
+
+.child .btn {
+  @apply my-3 py-1
+}
