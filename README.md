@@ -15,9 +15,11 @@ To start the project, please follow the steps below:
 
 ## API Configuration
 
-The API endpoint URL is defined in the API_URL variable, located in root_package/src/constant.ts. By default, it is set to:
+The API endpoint URL is defined in the `.env.local` as `NEXT_PUBLIC_API_URL`. By default, it is set to:
 
    ```bash
-   export const API_URL = 'http://localhost:8000';
+   NEXT_PUBLIC_API_URL=http://localhost:8000/api
    ```
 You can modify this URL according to your environment setup.
+
+* The .env.local file is not ignored by Git to facilitate easier testing and ensure the API configuration is accessible during the test.
