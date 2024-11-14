@@ -15,7 +15,7 @@ import Link from "next/link";
 import { useActionState } from "react";
 
 export default function Register() {
-  const [state, formAction, isPending] = useActionState(register, {
+  const [state, formAction] = useActionState(register, {
     message: "",
   });
 

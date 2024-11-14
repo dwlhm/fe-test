@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const [popupElement, setPopupElement] = useState<ReactNode>(<></>);
   const reset = () => setPopupElement(<></>);
 
-  const { isLoading, data } = useAllProjects();
+  const { data } = useAllProjects();
 
   return (
     <>

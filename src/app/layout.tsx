@@ -3,11 +3,9 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { MainNavbar } from "@/components/navbars";
 import { cookies } from "next/headers";
-import { AUTH_COOKIE, TOKEN_COOKIE } from "@/constant";
+import { AUTH_COOKIE } from "@/constant";
 import { LoginResponse } from "@/login/actions";
-import { ReactNode, useContext } from "react";
 import { ReactQueryContextProvider } from "@/lib/react-query/provider";
-import { redirect } from "next/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

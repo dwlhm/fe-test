@@ -60,10 +60,10 @@ export async function login(
 }
 
 export async function logout(
-  prevState: {
+  _: {
     message: unknown;
   },
-  formData: FormData
+  __: FormData
 ) {
   const cookie = await cookies();
   cookie.delete(AUTH_COOKIE);

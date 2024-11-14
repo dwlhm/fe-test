@@ -15,7 +15,7 @@ export const DetailProjectComponent = ({ id }: { id: number }) => {
   const [popupElement, setPopupElement] = useState<ReactNode>(<></>);
 
   const reset = () => setPopupElement(<></>);
-  const { isLoading, data, error } = useProjects(id);
+  const { isLoading, data } = useProjects(id);
 
   if (isLoading) return <BasicLoading />;
 

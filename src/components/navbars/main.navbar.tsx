@@ -1,9 +1,8 @@
 "use client";
 
-import { AUTH_COOKIE } from "@/constant";
 import { LoginResponse, logout } from "@/login/actions";
 import Link from "next/link";
-import { redirect, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useActionState, useState } from "react";
 
 export const MainNavbar = ({ auth }: { auth: LoginResponse }) => {
@@ -11,7 +10,7 @@ export const MainNavbar = ({ auth }: { auth: LoginResponse }) => {
   const isProjects = path.includes("projects");
   const isTasks = path.includes("tasks");
 
-  const [state, formAction] = useActionState(logout, {
+  const [_, formAction] = useActionState(logout, {
     message: "",
   });
 

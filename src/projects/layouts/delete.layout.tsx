@@ -7,6 +7,7 @@ import { SUCCESS_DELETE_MSG } from "../constant";
 import { ErrorprojectCreate } from "../components";
 import { redirect } from "next/navigation";
 import { Projects } from "../api";
+import { useQueryClient } from "@tanstack/react-query";
 
 export const DeleteLayout = ({
   data,
@@ -15,12 +16,18 @@ export const DeleteLayout = ({
   data: Projects;
   reset: () => void;
 }) => {
-  
+  const queryClient = useQueryClient();
+
   const [state, formAction, isPending] = useActionState(deleteProject, {
     message: "",
   });
 
-  if (state.message == SUCCESS_DELETE_MSG) redirect("/projects");
+  if (state.message == SUCCESS_DELETE_MSG) {
+    queryClient.invalidateQueries({
+      queryKey: [`all.projects`]
+    })
+    redirect("/projects");
+  }
 
   return (
     <PopupContainerWithTitle title="Delete Projects" reset={reset}>

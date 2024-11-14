@@ -2,7 +2,6 @@
 
 import { BasicCard } from "@/components/cards";
 import { Tasks } from "../api";
-import Link from "next/link";
 import { useState } from "react";
 import { ViewLayout } from "../layouts";
 

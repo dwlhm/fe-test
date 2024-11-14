@@ -1,5 +1,4 @@
 import {
-  BasicContainerWithTitleAction,
   PopupContainerWithTitle,
 } from "@/components/containers";
 import { Tasks } from "../api";
@@ -24,13 +23,13 @@ export const EditLayout = ({
   });
 
   if (state.message == SUCCESS_EDIT_MSG) {
+    reset();
     queryClient.invalidateQueries({
       queryKey: ["all.tasks"],
     });
     queryClient.invalidateQueries({
       queryKey: [`specific.tasks.${data.id}`],
     });
-    reset();
   }
   
   return (

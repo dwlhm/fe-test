@@ -6,11 +6,11 @@ export const ErrorRegister = ({ schema }: { schema: string }) => {
 
   return (
     <>
-      {error.email.map((item) => (
-        <ErrorCard>{item}</ErrorCard>
+      {error.email.map((item, index) => (
+        <ErrorCard key={index}>{item}</ErrorCard>
       ))}
-      {error.password.map((item) => (
-        <ErrorCard>{item}</ErrorCard>
+      {error.password.map((item, index) => (
+        <ErrorCard key={index}>{item}</ErrorCard>
       ))}
     </>
   );

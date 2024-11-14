@@ -7,18 +7,18 @@ export const ErrorprojectCreate = ({ schema }: { schema: string }) => {
 
     return (
       <>
-        {error.name.map((item) => (
-          <ErrorCard>{item}</ErrorCard>
+        {error.name.map((item, index) => (
+          <ErrorCard key={`ne.${index}`}>{item}</ErrorCard>
         ))}
-        {error.description.map((item) => (
-          <ErrorCard>{item}</ErrorCard>
+        {error.description.map((item, index) => (
+          <ErrorCard key={`de.${index}`}>{item}</ErrorCard>
         ))}
-        {error.status.map((item) => (
-          <ErrorCard>{item}</ErrorCard>
+        {error.status.map((item, index) => (
+          <ErrorCard key={`se.${index}`}>{item}</ErrorCard>
         ))}
       </>
     );
-  } catch (error) {
+  } catch (_) {
     return <ErrorCard>System Error.</ErrorCard>;
   }
 };

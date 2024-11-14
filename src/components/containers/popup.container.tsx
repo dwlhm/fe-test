@@ -2,7 +2,6 @@
 
 import { ReactNode } from "react";
 import { BasicButton } from "../buttons";
-import { useRouter } from "next/navigation";
 
 export const PopupContainerWithTitle = ({
   reset,
@@ -13,8 +12,6 @@ export const PopupContainerWithTitle = ({
   children: ReactNode;
   reset: () => void;
 }) => {
-  const nav = useRouter();
-
   return (
     <div className="fixed inset-0 flex items-center justify-center flex-col backdrop-blur">
       <div className="w-full overflow-auto max-w-96 rounded-xl bg-gray-100 p-5 max-h-[90vh]">

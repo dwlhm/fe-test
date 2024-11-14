@@ -3,8 +3,8 @@ import { PopupContainerWithTitle } from "@/components/containers";
 import { BasicInput, RadioInput } from "@/components/inputs";
 import { useQueryClient } from "@tanstack/react-query";
 import { useActionState } from "react";
-import { createproject, editProject } from "../actions";
-import { SUCCESS_EDIT_MSG, SUCCESS_MSG } from "../constant";
+import { editProject } from "../actions";
+import { SUCCESS_EDIT_MSG } from "../constant";
 import { ErrorprojectCreate } from "../components";
 import { Projects } from "../api";
 import { get } from "@/lib/cookies";
@@ -18,13 +18,10 @@ export const EditLayout = ({
   data: Projects;
   reset: () => void;
 }) => {
-  const router = useRouter();
   const queryClient = useQueryClient();
   const [state, formAction, isPending] = useActionState(editProject, {
     message: "",
   });
-
-  const user = get(AUTH_COOKIE);
 
   if (state.message == SUCCESS_EDIT_MSG) {
     queryClient.invalidateQueries({

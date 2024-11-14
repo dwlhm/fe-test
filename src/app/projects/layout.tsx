@@ -1,4 +1,3 @@
-import { LinkButton } from "@/components/buttons";
 import { BasicContainerWithFlexMarginTop } from "@/components/containers";
 import { Metadata } from "next";
 import { ReactNode } from "react";

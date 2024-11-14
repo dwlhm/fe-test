@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEvent, MouseEventHandler, ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export const BasicButton = ({
   className = "",
@@ -8,7 +8,6 @@ export const BasicButton = ({
   disabled = false,
   children,
   onClick = () => {},
-  ...props
 }: {
   className?: string;
   type?: "submit" | "button";

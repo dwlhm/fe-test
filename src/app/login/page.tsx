@@ -9,7 +9,7 @@ import { BasicButton } from "@/components/buttons";
 import { BasicInput } from "@/components/inputs";
 
 export default function Login() {
-  const [state, formAction, isPending] = useActionState(login, { message: "" });
+  const [state, formAction] = useActionState(login, { message: "" });
 
   if (state.message == constant.SUCCESS_MESSAGE) {
     redirect("/");
@@ -25,7 +25,7 @@ export default function Login() {
       />
       <BasicButton type="submit">Login</BasicButton>
       <p>
-        Doesn't have an account?{" "}
+        Doesn't have an account? 
         <Link href="/register" className="text-blue-500">
           Register
         </Link>

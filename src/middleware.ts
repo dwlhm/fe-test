@@ -6,7 +6,7 @@ export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const isLoginPage = pathname.includes("login");
 
-  let authTokenCookie = request.cookies.get(AUTH_COOKIE);
+  const authTokenCookie = request.cookies.get(AUTH_COOKIE);
 
   if (!authTokenCookie && !isLoginPage) {
     return NextResponse.redirect(new URL("/login", request.url));
